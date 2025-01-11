@@ -34,11 +34,3 @@ process.on("SIGTERM", () => {
 
 console.log("all processes started".green)
 
-import('log-update').then(mod => {
-    const frames = ['-', '\\', '|', '/'];
-    var index = 0;
-    setInterval(() => {
-	    const frame = frames[index = ++index % frames.length];
-        mod.default(`${frame} tries: ${tries}; hits: ${hits} ${frame}`);
-    }, 1);
-});
